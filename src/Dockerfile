@@ -15,5 +15,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 COPY entrypoint.sh /entrypoint.sh
 COPY matcher.json /matcher.json
+COPY config.yml /config.yml
 
 ENTRYPOINT ["/entrypoint.sh"]
