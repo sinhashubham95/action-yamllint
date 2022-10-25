@@ -11,13 +11,7 @@ cp /matcher.json "${PWD}/matcher.json"
 echo "::add-matcher::matcher.json"
 
 # Custom path for yamllint configuration input
-if [[ -n "${INPUT_CONFIG}" ]]; then
-  if [[ ! -f "${INPUT_CONFIG}" ]]; then
-    echo "::error ::Custom yamllint configuration file not found: ${INPUT_CONFIG}"
-    exit 1
-  fi
-  options+=(--config-file "${INPUT_CONFIG}")
-fi
+options+=(--config-file "/config.yml")
 
 [[ "${INPUT_STRICT,,}" = "true" ]] \
   && options+=(--strict)
